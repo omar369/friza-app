@@ -1,5 +1,6 @@
 import { Navbar } from '@/components/shared/navbar'
 import { HeroMain } from '@/components/shared/hero-main'
+import { Footer } from '@/components/shared/footer'
 
 export default function HomePage() {
   return (
@@ -49,9 +50,7 @@ export default function HomePage() {
       {/* ================================ */}
       {/* ⚓ FOOTER */}
       {/* ================================ */}
-      <footer className="w-full border-t border-gray-200 py-6 text-center text-sm text-gray-500">
-        <p>© {new Date().getFullYear()} MiTienda — Todos los derechos reservados.</p>
-      </footer>
+      <Footer/>
     </>
   )
 }
