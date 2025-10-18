@@ -12,7 +12,7 @@ export default function HomePage() {
 
       <div className="flex flex-col items-center justify-center">
         <HeroMain/>
-        {/* 🏠 SECCIÓN PRINCIPAL - PRESENTACIÓN PRODUCTO */}
+        {/* SECCIÓN PRINCIPAL - PRESENTACIÓN PRODUCTO */}
         <section className="w-full min-h-[150vh] flex items-center justify-center border-b border-gray-100 bg-transparent">
           <div className="max-w-5xl px-6 text-center">
             <h1>Nuestro mejor producto</h1>

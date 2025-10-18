@@ -7,8 +7,6 @@ import { useLenis } from "lenis/react";
 
 function RotatingMesh() {
   const mesh = useRef<THREE.Mesh>(null);
-  const { size, viewport, camera } = useThree();
-  const lenis = useLenis();
   const [progress, setProgress] = useState(0);
 
   useThree(({ scene }) => {
@@ -28,15 +26,15 @@ function RotatingMesh() {
     const m = mesh.current;
 
     // defaults
-    let target = new THREE.Vector3(0, 0, 0);
+    const target = new THREE.Vector3(0, 0, 0);
 
     // fases del scroll
     if (progress < 0.2) {
-      const t = progress / 0.2; // 0..1
+      const t = progress / 0.2; 
       target.set(0, THREE.MathUtils.lerp(1, 1, t), -10);
     } else if (progress < 0.6) {
       const t = (progress - 0.2) / (0.6 - 0.2);
-      target.set(1.5, 2, 0);
+      target.set(THREE.MathUtils.lerp(1, 1.5, t), 2, 0);
     } else {
       const t = (progress - 0.6) / (1 - 0.6);
       target.set(
