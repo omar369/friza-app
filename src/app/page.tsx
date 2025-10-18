@@ -1,57 +1,30 @@
+"use client"
 import { Navbar } from '@/components/shared/navbar'
 import { HeroMain } from '@/components/shared/hero-main'
 import { Footer } from '@/components/shared/footer'
+import { ThreeScene } from '@/components/marketing/three-scene'
 
 export default function HomePage() {
   return (
-    <>
+    <main className="relative">
+      <ThreeScene/>
       <Navbar />
 
-      <main className="flex flex-col items-center justify-center">
+      <div className="flex flex-col items-center justify-center">
         <HeroMain/>
-        {/* ================================ */}
-        {/* 🏠 HERO PRINCIPAL */}
-        {/* ================================ */}
-        <section className="w-full min-h-[80vh] flex items-center justify-center border-b border-gray-100">
+        {/* 🏠 SECCIÓN PRINCIPAL - PRESENTACIÓN PRODUCTO */}
+        <section className="w-full min-h-[150vh] flex items-center justify-center border-b border-gray-100 bg-transparent">
           <div className="max-w-5xl px-6 text-center">
-            {/* Aquí va el hero principal */}
-            <div>/* aquí va el hero */</div>
+            <h1>Nuestro mejor producto</h1>
+            <div className="w-full min-h-[200vh] py-12">otra</div>
+            <div className="w-full min-h-[200vh] py-12">separación</div>
+            <div className="w-full min-h-[200vh] py-12">invisible?</div>
           </div>
         </section>
+      </div>
 
-        {/* ================================ */}
-        {/* 💎 SECCIÓN 1 */}
-        {/* ================================ */}
-        <section className="w-full min-h-[60vh] flex items-center justify-center border-b border-gray-100">
-          <div className="max-w-6xl px-6">
-            <div>/* aquí va la sección 1 */</div>
-          </div>
-        </section>
-
-        {/* ================================ */}
-        {/* 🛠️ SECCIÓN 2 */}
-        {/* ================================ */}
-        <section className="w-full min-h-[60vh] flex items-center justify-center border-b border-gray-100">
-          <div className="max-w-6xl px-6">
-            <div>/* aquí va la sección 2 */</div>
-          </div>
-        </section>
-
-        {/* ================================ */}
-        {/* 🚀 SECCIÓN 3 */}
-        {/* ================================ */}
-        <section className="w-full min-h-[60vh] flex items-center justify-center border-b border-gray-100">
-          <div className="max-w-6xl px-6">
-            <div>/* aquí va la sección 3 */</div>
-          </div>
-        </section>
-      </main>
-
-      {/* ================================ */}
-      {/* ⚓ FOOTER */}
-      {/* ================================ */}
       <Footer/>
-    </>
+    </main>
   )
 }
 

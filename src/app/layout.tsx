@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "@radix-ui/themes/styles.css";
 import "./globals.css";
-
+import { ReactLenis, useLenis } from 'lenis/react'
 import { Theme } from "@radix-ui/themes";
 
 const geistSans = Geist({
@@ -30,7 +30,11 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <Theme> {children}</Theme>
+        <Theme> 
+        <ReactLenis root options={{ duration: 4, lerp: 2, smoothWheel: true }}>
+          {children}
+        </ReactLenis>
+        </Theme>
       </body>
     </html>
   );

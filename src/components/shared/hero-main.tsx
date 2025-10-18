@@ -13,7 +13,7 @@ export function HeroMain() {
   }, [])
 
   return (
-      <section className="relative min-h-[80vh] w-full bg-gray-200 flex items-center justify-center overflow-hidden">
+      <section className="relative z-10 h-[90vh] w-full bg-gray-200 flex items-center justify-center overflow-hidden">
       {/* Fondo animado */}
       <Particles
         id="tsparticles"
@@ -37,10 +37,10 @@ export function HeroMain() {
       {/* Contenido del hero */}
       <div className="relative z-10 text-center">
         <AnimatedLogo/> 
-        <h2 className="mt-2 text-gray-600 mx-auto">
+        <h2 className="text-gray-600 mx-auto text-md">
             Hacemos tu evento brillar.
         </h2>
-        <Button asChild className="mt-6">
+        <Button asChild className="mt-6 bg-yellow-400 text-black hover:bg-yellow-300">
           <a href="/marketing">Ver productos</a>
         </Button>
       </div>

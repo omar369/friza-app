@@ -34,7 +34,7 @@ export function AnimatedLogo() {
       }}
       className="flex items-center justify-center select-none"
     >
-      <Logo className="w-64 h-64 md:w-80 md:h-80 text-blue-600" />
+      <Logo className="w-64 h-42 md:w-80 md:h-80 text-blue-600 overflow-hidden" />
     </motion.div>
   );
 }
