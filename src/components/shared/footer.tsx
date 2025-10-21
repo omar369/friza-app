@@ -46,9 +46,9 @@ export function Footer() {
           <Separator className="w-24 bg-gray-300" />
 
           <div className="flex flex-col md:flex-row items-center justify-center gap-3 text-xs text-gray-500">
-            <p>© {new Date().getFullYear()} MiTienda</p>
+            <p>© {new Date().getFullYear()} Friza store</p>
             <span className="hidden md:block">•</span>
-            <p>Mejorando cada día para dar al cliente un mejor servicio.</p>
+            <p>Página desarrollada por Friza.</p>
           </div>
 
           <Button

@@ -4,6 +4,8 @@ import "@radix-ui/themes/styles.css";
 import "./globals.css";
 import { ReactLenis } from "lenis/react";
 import { Theme } from "@radix-ui/themes";
+import { Navbar } from "@/components/shared/navbar";
+import { Footer } from "@/components/shared/footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -31,11 +33,19 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <Theme>
+          <Navbar/>
           <ReactLenis
             root
-            options={{ duration: 4, lerp: 2, smoothWheel: true }}
+            options={{
+              duration: 4,
+              lerp: 2,
+              smoothWheel: true,
+              touchMultiplier: 1.5,
+              syncTouch: true,
+            }}
           >
             {children}
+            <Footer />
           </ReactLenis>
         </Theme>
       </body>

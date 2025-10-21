@@ -1,14 +1,11 @@
 "use client"
-import { Navbar } from '@/components/shared/navbar'
 import { HeroMain } from '@/components/shared/hero-main'
-import { Footer } from '@/components/shared/footer'
 import { ThreeScene } from '@/components/marketing/three-scene'
 
 export default function HomePage() {
   return (
     <main className="relative">
       <ThreeScene/>
-      <Navbar />
 
       <div className="flex flex-col items-center justify-center">
         <HeroMain/>
@@ -23,7 +20,6 @@ export default function HomePage() {
         </section>
       </div>
 
-      <Footer/>
     </main>
   )
 }

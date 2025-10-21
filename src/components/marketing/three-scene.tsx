@@ -4,13 +4,19 @@ import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import { useRef, useState } from "react";
 import * as THREE from "three";
 import { useLenis } from "lenis/react";
+import { Bengala } from "@/components/models/Bengala";
+import { Environment } from "@react-three/drei";
+import {
+  EffectComposer,
+  Bloom,
+} from "@react-three/postprocessing";
 
 function RotatingMesh() {
   const mesh = useRef<THREE.Mesh>(null);
   const [progress, setProgress] = useState(0);
 
   useThree(({ scene }) => {
-    scene.fog = new THREE.Fog("#ffffff", 5, 15);
+    scene.fog = new THREE.Fog("#004b82", 5, 15);
     return null;
   });
 
@@ -30,11 +36,11 @@ function RotatingMesh() {
 
     // fases del scroll
     if (progress < 0.2) {
-      const t = progress / 0.2; 
-      target.set(0, THREE.MathUtils.lerp(1, 1, t), -10);
+      const t = progress / 0.2;
+      target.set(0, THREE.MathUtils.lerp(0.5, 0, t), -12);
     } else if (progress < 0.6) {
       const t = (progress - 0.2) / (0.6 - 0.2);
-      target.set(THREE.MathUtils.lerp(1, 1.5, t), 2, 0);
+      target.set(THREE.MathUtils.lerp(1, 1.5, t), 0.5, 0);
     } else {
       const t = (progress - 0.6) / (1 - 0.6);
       target.set(
@@ -51,10 +57,7 @@ function RotatingMesh() {
   });
 
   return (
-    <mesh ref={mesh}>
-      <icosahedronGeometry args={[1.2, 4]} />
-      <meshBasicMaterial color="#5a4a8f"/>
-    </mesh>
+    <Bengala ref={mesh} scale={9} position={[0, 0, 0]} />
   );
 }
 
@@ -62,10 +65,20 @@ export function ThreeScene() {
   return (
     <div className="fixed w-full h-full -z-50">
       <Canvas className="w-full h-full" camera={{ position: [0, 0, 6] }}>
+        <Environment preset="city" />
         <fog attach="fog" args={["#ffffff", 0.1, 100]} />
-        <ambientLight intensity={0.4} />
-        <directionalLight position={[5, 5, 5]} intensity={1} />
+        <ambientLight intensity={0.5} color="#3232ff" />
+        <pointLight position={[3, 3, 1]} intensity={5} color="#ff2233" />
+        <pointLight position={[-3, 0, 1]} intensity={5} color="#1122ff" />
         <RotatingMesh />
+
+        <EffectComposer>
+          <Bloom
+            intensity={1.2}
+            luminanceThreshold={0.01}
+            luminanceSmoothing={0.9}
+          />
+        </EffectComposer>
       </Canvas>
     </div>
   );

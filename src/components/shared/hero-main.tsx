@@ -13,19 +13,19 @@ export function HeroMain() {
   }, [])
 
   return (
-      <section className="relative z-10 h-[90vh] w-full bg-gray-200 flex items-center justify-center overflow-hidden">
+      <section className="relative z-10 h-[100vh] w-full flex items-center justify-center overflow-hidden">
       {/* Fondo animado */}
       <Particles
         id="tsparticles"
         init={particlesInit}
         options={{
           fullScreen: { enable: false },
-          background: { color: { value: '#efefef' } },
+          background: { color: { value: 'transparent' }},
           particles: {
             number: { value: 250 },
             color: { value: ['#e03a87', '#115b8e', '#fbc320', '#a1bd09', '#00affe'] },
             shape: { type: 'circle' },
-            opacity: { value: 0.8 },
+            opacity: { value: 0.7 },
             size: { value: { min: 2, max: 5 } },
             move: { enable: true, speed: 1.2, direction: 'bottom', outModes: 'out' },
           },
@@ -36,7 +36,7 @@ export function HeroMain() {
 
       {/* Contenido del hero */}
       <div className="relative z-10 text-center">
-        <AnimatedLogo/> 
+        <AnimatedLogo /> 
         <h2 className="text-gray-600 mx-auto text-md">
             Hacemos tu evento brillar.
         </h2>
