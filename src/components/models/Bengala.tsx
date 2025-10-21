@@ -1,7 +1,8 @@
 "use client";
 
 import * as THREE from "three";
-import React, { useRef, useEffect } from "react";
+import { useRef, useEffect } from "react";
+import { ThreeElements } from '@react-three/fiber'
 import {
   useGLTF,
   useAnimations,
@@ -23,9 +24,9 @@ type GLTFResult = GLTF & {
   animations: GLTFAction[];
 };
 
-export function Bengala(props: JSX.IntrinsicElements["group"]) {
+export function Bengala(props: ThreeElements['group']) {
   const group = useRef<THREE.Group>(null!);
-  const { nodes, animations } = useGLTF("/models/SOLO_VELA.glb") as GLTFResult;
+  const { nodes, animations } = useGLTF("/models/SOLO_VELA.glb") as unknown as GLTFResult
   const { actions } = useAnimations(animations, group);
 
   useEffect(() => {
