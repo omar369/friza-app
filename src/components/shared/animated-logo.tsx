@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Logo from "@/../public/logo.svg";
+import logoPath from "@/../public/logo.svg";
 
 export function AnimatedLogo() {
   return (
@@ -32,7 +32,7 @@ export function AnimatedLogo() {
       }}
       className="flex items-center justify-center select-none"
     >
-      <Logo className="w-64 h-42 md:w-96 md:h-96 text-blue-600 overflow-hidden md:pb-10" />
+      <img src={logoPath.src} className="w-64 h-42 md:w-96 md:h-96 text-blue-600 overflow-hidden md:pb-10" />
     </motion.div>
   );
 }
